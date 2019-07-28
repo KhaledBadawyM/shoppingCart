@@ -3,8 +3,8 @@ it's available for you to add items to your cart , edit your items in cart, remo
 
 The process I went through :
   - read the symfony4 documentation to understand the framework structure
-  - create the class diagram for the project
-  - create the ER-diagram for the database
+  - create the class diagram for the project (attached)
+  - create the ER-diagram for the database  (attached)
   - install mysql database
   - install the framework
   - connect the framework with the database and make sure everything is work.
