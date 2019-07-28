@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Item index{% endblock %}
+
+{% block body %}
+    <h1>Item index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.description }}</td>
+                <td>
+                    <a href="{{ path('item_show', {'id': item.id}) }}">show</a>
+                    <a href="{{ path('item_edit', {'id': item.id}) }}">edit</a>
+                    <a href="{{ path('add_item_cart',{'id': item.id})}}">Buy</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('item_new') }}">Create new</a>
+{% endblock %}
