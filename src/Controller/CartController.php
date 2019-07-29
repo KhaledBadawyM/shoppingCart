@@ -185,7 +185,7 @@ class CartController extends AbstractController
       $cart_item = $repo->findBy(array('cart'=>$cart));
 
       foreach($cart_item as $item){
-        manager->remove($item);
+        $manager->remove($item);
         $manager->flush();
       }
 
