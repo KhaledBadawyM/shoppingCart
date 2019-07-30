@@ -1,4 +1,4 @@
-Here is a symfony4 shopping cart application , here you could add first create your profile then,
+Here is a symfony4 shopping cart application , here you could first create your profile then,
 it's available for you to add items to your cart , edit your items in cart, remove item or delete the whole cart .
 
 The process I went through :
