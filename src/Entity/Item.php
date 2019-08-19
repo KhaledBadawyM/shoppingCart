@@ -9,6 +9,14 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ItemRepository")
  */
+
+ /**
+ * @Entity
+ * @InheritanceType("SINGLE_TABLE")
+ * @DiscriminatorColumn(name="discr", type="string")
+ * @DiscriminatorMap({"item" = "Item", "saleitem" = "SaleItem", "normalitem"="NormalItem"})
+ */
+
 class Item
 {
     /**
@@ -133,4 +141,21 @@ class Item
 
         return $this;
     }
+}
+
+/**
+ * @Entity
+ */
+class SaleItem extends Item
+{
+    // ...
+}
+
+
+/**
+ * @Entity
+ */
+class NormalItem extends Item
+{
+    // ...
 }
