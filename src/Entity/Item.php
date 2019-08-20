@@ -11,10 +11,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 
  /**
- * @Entity
- * @InheritanceType("SINGLE_TABLE")
- * @DiscriminatorColumn(name="discr", type="string")
- * @DiscriminatorMap({"item" = "Item", "saleitem" = "SaleItem", "normalitem"="NormalItem"})
+ * @ORM\Entity
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"item" = "Item", "saleitem" = "SaleItem", "normalitem"="NormalItem"})
  */
 
 class Item
@@ -144,7 +144,7 @@ class Item
 }
 
 /**
- * @Entity
+ * @ORM\Entity
  */
 class SaleItem extends Item
 {
@@ -153,7 +153,7 @@ class SaleItem extends Item
 
 
 /**
- * @Entity
+ * @ORM\Entity
  */
 class NormalItem extends Item
 {

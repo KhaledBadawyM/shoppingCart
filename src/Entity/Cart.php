@@ -6,16 +6,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CartRepository")
  */
 
 
  /**
- * @Entity
- * @InheritanceType("SINGLE_TABLE")
- * @DiscriminatorColumn(name="discr", type="string")
- * @DiscriminatorMap({"cart" = "Cart", "ordercart" = "OrderCart", "wishlistcart"="WishListCart"})
+ * @ORM\Entity
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"cart" = "Cart", "ordercart" = "OrderCart", "wishlistcart"="WishListCart"})
  */
 class Cart
 {
@@ -124,9 +125,8 @@ class Cart
     // }
 }
 
-
 /**
- * @Entity
+ * @ORM\Entity
  */
 class OrderCart extends Cart
 {
@@ -134,7 +134,7 @@ class OrderCart extends Cart
 }
 
 /**
- * @Entity
+ * @ORM\Entity
  */
 class WishListCart extends Cart
 {

@@ -28,6 +28,17 @@ class CartController extends AbstractController
     }
 
 
+    /**
+     * @Route("/", name="wishlist", methods={"GET"})
+     */
+    public function wishlistindex(CartRepository $cartRepository): Response
+    {
+        return $this->render('cart/index.html.twig', [
+            'carts' => $cartRepository->findBy(["discr"=>"wishlistcart"]),
+        ]);
+    }
+
+
 
     /**
      * @Route("/new", name="cart_new", methods={"GET","POST"})
@@ -194,6 +205,7 @@ class CartController extends AbstractController
       $manager->flush();
       return $this->redirect($this->generateUrl('view_cart'));
     }
+
 
 
 
